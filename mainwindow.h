@@ -52,6 +52,10 @@ private slots:
     void on_BTNWYPEL_clicked();
 
     void on_BTNSYGNAL_clicked();
+    void on_BTNKP_clicked();
+
+    void on_BTNKD_clicked();
+    void on_BTNKI_clicked();
 
 private:
     Ui::MainWindow *ui;

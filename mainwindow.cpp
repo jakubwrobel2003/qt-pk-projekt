@@ -361,7 +361,7 @@ void MainWindow::on_BTNWYPEL_clicked()
 {
     double signalValue = ui->SPINBOXWYPELNIENIE->value();
     app->syg->setp(signalValue); // Konwertujemy double na std::string
-    QMessageBox::information(this, "Sukces", "Wartość sygnału została ustawiona jako: + QString::number(signalValue)");
+    QMessageBox::information(this, "Sukces", "Wartość sygnału została ustawiona jako:" + QString::number(signalValue));
 
 }
 
@@ -370,6 +370,28 @@ void MainWindow::on_BTNSYGNAL_clicked()
 {
     double signalValue = ui->SPINBOXSYGNAL->value();
     app->sygnal=signalValue;
+    QMessageBox::information(this, "Sukces", "Wartość sygnału została ustawiona jako: " + QString::number(signalValue));
+}
+
+void MainWindow::on_BTNKP_clicked()
+{   qDebug()<<"DUPA";
+    double signalValue =ui->SPINBOXKP->value();
+    app->Pid->ustawWzmocnienieProporcjonalne(signalValue);
+    QMessageBox::information(this, "Sukces", "Wartość sygnału została ustawiona jako: " + QString::number(signalValue));
+}
+
+
+void MainWindow::on_BTNKD_clicked()
+{
+    double signalValue =ui->SPINBOXKD->value();
+    app->Pid->ustawWzmocnienieRowniczkujace(signalValue);
+    QMessageBox::information(this, "Sukces", "Wartość sygnału została ustawiona jako: " + QString::number(signalValue));
+}
+
+void MainWindow::on_BTNKI_clicked()
+{
+    double signalValue =ui->SPINBOXKI->value();
+    app->Pid->ustawWzmocnienieCalkujace(signalValue);
     QMessageBox::information(this, "Sukces", "Wartość sygnału została ustawiona jako: " + QString::number(signalValue));
 }
 
