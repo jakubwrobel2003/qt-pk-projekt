@@ -72,7 +72,7 @@ void App::symulacjaStep() {
 
     // Debug: Informacje o dodanych danych
     qDebug() << "Dodano punkt do symulacji: ID =" << data.back()->getI()
-             << ", Y =" << data.back()->getY();
+             << ", Y =" << data.back()->getY()<<", U="<< data.back()->getU();
 }
 
 

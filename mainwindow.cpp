@@ -98,7 +98,7 @@ void MainWindow::on_START_clicked() {
      if (app) {
     app->startSymulacja();
     timer->start(100);      // timer co 100 ms
-    qDebug() << "Symulacja uruchomiona.";
+    qDebug() << "Symulacja uruchomiona";
     ui->START->setEnabled(false);
     ui->STOP->setEnabled(true);
 
@@ -113,7 +113,7 @@ void MainWindow::on_START_clicked() {
     //ui->SAVE->setDisabled(true);
      }
     else {
-         qDebug() << "Błąd: Obiekt `App` nie został zainicjalizowany.";
+         qDebug() << "Błąd: `app->data` to nullptr";
     }
 }
 
@@ -121,7 +121,7 @@ void MainWindow::on_STOP_clicked() {
     if (app) {
     app->stopSymulacja();  // Zatrzymaj symulację
     timer->stop();         // Zatrzymaj timer
-    qDebug() << "Symulacja zatrzymana.";
+    qDebug() << "Symulacja zatrzymana";
     ui->STOP->setEnabled(false);
     ui->START->setEnabled(true);
     ui->ODCZYT->setDisabled(false);
@@ -201,7 +201,7 @@ void MainWindow::on_ODCZYT_clicked()
                     axisY->setRange(axisY->min(), axisY->max()+1 );
                 }
                 qDebug() << "Zaktualizowano wykres: X =" << ostatniElement->getI()
-                         << ", Y =" << ostatniElement->getY()<<",Zaklucenie= "<<ostatniElement->getZaklucenie();
+                         << "Y =" << ostatniElement->getY()<<",Zaklucenie= "<<ostatniElement->getZaklucenie();
             } else {
                 qDebug() <<"`app->data` to nullptr";
             }
@@ -238,7 +238,7 @@ void MainWindow::updateChart()
             axisY->setRange(axisY->min(), axisY->max()+1 );
         }
         qDebug() << "Zaktualizowano wykres X =" << ostatniElement->getI()
-                 << ", Y =" << ostatniElement->getY()<<",Zaklucenie= "<<ostatniElement->getZaklucenie();
+                 << " Y =" << ostatniElement->getY()<<",Zaklucenie= "<<ostatniElement->getZaklucenie();
     } else {
         qDebug() << "`app->data` to nullptr";
     }
